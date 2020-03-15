@@ -10,19 +10,11 @@
     <div class="row">
         <h1 class="title is-1">ToDo Application</h1>
 
-        <form action="api/todo" method="post">
-            <div class="field">
-                <label class="label">ToDo Name</label>
-                <div class="control">
-                <input class="input" type="text" placeholder="ToDo" name="name">
-                </div>
-            </div>
+        {!! Form::open(['route' => ['/update/todo', $todo->id]]); !!}
+        {!! Form::text('name', $todo->name) !!}
+        {!!Form::submit('Save'); !!}
+        {!! Form::close() !!}
 
-            <div class="field is-grouped">
-                <div class="control">
-                <button class="button is-link">Save</button>
-            </div>
-        </form>
     </div>
 </body>
 </html>

@@ -11,4 +11,12 @@
 |
 */
 
+use App\Todo;
+
 Route::get('/','TodoController@index');
+Route::get('/todo/update/{id}',function($id){
+    $todo = Todo::find($id);
+
+    return view('edit',compact('todo'));
+
+});

@@ -83,6 +83,10 @@ class TodoController extends Controller
         $todo = Todo::find($id);
         $todo->name = $request->name;
         $todo->save();
+
+        $todos = Todo::all();
+
+        return view('home',compact('todos'));
     }
 
     /**
